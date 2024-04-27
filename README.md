@@ -1,11 +1,7 @@
 # anemone
 
-Introducing "anemone," a minimalist [Zola](https://www.getzola.org) theme that prioritizes clean CSS and avoids heavy JavaScript. Enjoy a seamless user experience with lightning-fast load times. Let your content take center stage in a clutter-free, elegant design that enhances readability. Responsive and efficient, anemone brings focus to your ideas.
+> It's a fork of [anemone](https://github.com/Speyll/anemone) theme by [Lyes (@Speyll)](https://github.com/Speyll) and customized (just a little) for myself. :)
 
-You can browse the demo website [here](https://anemone.pages.dev/)
-I also use it on my own [website.](https://speyllsite.pages.dev/)
-
-Anemone is a versatile Zola theme that comes with both light and dark variants. You can easily switch between the light and dark themes to suit your preferences.
 
 ![Anemone Light and Dark Theme](screenshot.png)
 
@@ -17,30 +13,20 @@ To get started with Anemone, follow these simple steps:
 
 ```bash
 cd themes
-git clone https://github.com/Speyll/anemone
+git clone https://github.com/CheapNightbot/anemone-ness.git
+```
+
+OR if you already have initialized the directory as a git repository:
+
+```bash
+git submodule add https://github.com/CheapNightbot/anemone-ness.git themes/anemone-ness
 ```
 
 2. Enable Anemone in your `config.toml`:
 
 ```toml
-theme = "anemone"
+theme = "anemone-ness"
 ```
-
-## Release Notes
-
-#### 02-03-2024
-This release brings several improvements and enhancements, focusing mainly on optimizing performance and user experience. Here's a summary of the key changes:
-
-- **suCSS Integration:** The core CSS now leverages the lightweight [suCSS framework](https://speyll.github.io/suCSS/) made by yours truly, providing better maintainability, robustness, and scalability. With suCSS, the theme should maintain consistent appearance across different browsers.
-
-- **Enhanced Theme Toggle:** The dark and light theme toggle has been revamped for more consistency. Now, the website respects the user's system-wide theme settings, ensuring a seamless experience. Additionally, the toggle retains the selected theme for future visits, offering improved usability.
-
-- **Smooth Transition and Sound Effect:** Enjoy a smoother transition between the dark and light mode accompanied by a subtle sound effect. Rest assured, the added sound effect incurs minimal performance overhead, with the file size being just 1kb.
-
-- **Class Names and Shortcodes Update:** Some class names and shortcodes have been modified for better organization and clarity. I apologize for any inconvenience this may cause.
-
-- **Slight change in Color Choice:** Some dark mode colors have been changed for the sake of readability, still using [veqev](https://github.com/Speyll/veqev).
-
 
 ## Options
 
@@ -74,6 +60,11 @@ weight = 2
 title = "anemone"
 languageName = "Français"
 languageCode = "fr"
+generate_feed = true
+
+taxonomies = [
+    {name = "tags", feed = true},
+]
 ```
 #### Multilanguage-Ready Navigation Bar
 
@@ -108,7 +99,20 @@ Customize the display of the author's name in your blog posts by toggling the `d
 display_author = true
 ```
 
-### Webrings
+### [Shortcodes](https://www.getzola.org/documentation/content/shortcodes/)
+
+#### Highlight
+
+```html
+{{ mark(content="I'm Highlighted") }}
+```
+
+#### Format Date & Time
+
+- `{{ date_format(date="2024-04-01") }}` will look like: **April 01, 2024**
+- `{{ date_format_journal(date="2024-04-01T03:56:00")}}` will look like: **Monday at 03:56 AM**
+
+#### Webrings
 
 Add a webring with a shortcode:
 

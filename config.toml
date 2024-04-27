@@ -43,9 +43,9 @@ twitter_card = true
 
 header_nav = [
   { url = "/", name_en = "/home/", name_fr = "/accueil/" },
-  { url = "/about", name_en = "/about/", name_fr = "/concernant/" },
+  { url = "/blog", name_en = "/blog/", name_fr = "/blog/" },
   { url = "/journal", name_en = "/journal/", name_fr = "/journal/" },
-  { url = "/blog", name_en = "/blog/", name_fr = "/blog/" }
+  { url = "/about", name_en = "/about/", name_fr = "/concernant/" }
 ]
 
 # Optional footer license text. It will only show, when using footer_content_license.
